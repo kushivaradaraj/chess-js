@@ -30,9 +30,10 @@ Pawn.prototype.isValidPosition = function(targetPosition){
 Pawn.prototype.moveTo = function(targetPosition){    
     if(this.isValidPosition(targetPosition)){
         this.position = targetPosition.col + targetPosition.row;
+        console.log(`Pawn moved to ${this.position}`);
         this.render();
+        return true;
     }else{
-        //NOOP
-    }
-    
+        return false;
+    }   
 }
